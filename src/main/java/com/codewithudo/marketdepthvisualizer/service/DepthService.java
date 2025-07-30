@@ -15,7 +15,7 @@ public class DepthService {
     }
 
     public OrderBook getOrderBook(String market) {
-        String url = "https://app.quidax.com/api/v1/depth?market=" + market;
+        String url = "https://app.quidax.com/api/v1/markets/" + market + "/depth";
 
         // Tell RestTemplate to expect our wrapper object
         DepthResponse response = restTemplate.getForObject(url, DepthResponse.class);
