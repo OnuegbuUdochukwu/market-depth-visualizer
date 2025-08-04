@@ -1,20 +1,13 @@
 package com.codewithudo.marketdepthvisualizer.dto;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Value;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Data;
 
-@Value
+@Data
+@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+@JsonPropertyOrder({ "price", "volume" })
 public class Order {
-
-    String price;
-    String volume;
-
-    @JsonCreator
-    public Order(
-            @JsonProperty("price") String price,
-            @JsonProperty("volume") String volume) {
-        this.price = price;
-        this.volume = volume;
-    }
+    private String price;
+    private String volume;
 }

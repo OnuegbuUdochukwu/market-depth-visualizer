@@ -4,8 +4,7 @@ import lombok.Data;
 
 @Data
 public class DepthResponse {
-
     private String status;
+    private String message;
     private OrderBook data;
-
 }
